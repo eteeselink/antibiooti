@@ -45,8 +45,24 @@ namespace Antibiooti.Forum2016
 
                }
                else if (func == "char")
+                 
                {
-                   //Go to Char Function
+                    string pos = args[1];
+                    string chr = args[2];
+                    string color = args[3];
+
+                    Console.WriteLine(pos);
+                    Console.WriteLine(chr);
+                    Console.WriteLine(color);
+
+                    int pos2 = Int32.Parse(pos);
+
+                Screen scr=new Screen();
+                Character c = new Character(chr[0]);
+           
+           // TODO Convert the color to ConsoleColor
+           scr.printCharacter(c, pos2, ConsoleColor.White);
+                   
                }
                else {
                    OutputErrorMessage();
