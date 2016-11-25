@@ -41,7 +41,7 @@ namespace Antibiooti.Forum2016
                    string filePath = args[1]; 
                    Console.WriteLine(filePath);
 
-                  Movie outputMovie = new Movie(args[1]);
+                  Movie outputMovie = new Movie(filePath);
 
                }
                else if (func == "char")
