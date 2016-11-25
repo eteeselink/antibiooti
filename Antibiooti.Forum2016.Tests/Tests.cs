@@ -45,10 +45,10 @@ namespace Antibiooti.Forum2016.Tests
                 {' ',' ',' ',' ',' '},
                 {' ',' ',' ',' ',' '}
             };
-            Assert.True(this.charEquals(expectedBuffer, c.buffer())); 
+            this.assertCharEquals(expectedBuffer, c.buffer()); 
         }
 
-        private bool charEquals(char[,] b1, char[,] b2) {
+        private void assertCharEquals(char[,] b1, char[,] b2) {
             Assert.Equal(b1.GetLength(0), b2.GetLength(0));
             Assert.Equal(b1.GetLength(1), b2.GetLength(1));
             for(int i = 0; i < b1.GetLength(0); ++i)
