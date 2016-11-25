@@ -36,5 +36,44 @@ namespace Antibiooti.Forum2016.Tests
             Movie movie2 = new Movie("movieRightCommand.txt");
             Assert.Equal(movie2.readFile(), "Last symbol is not an integer");
         }
+
+        [Fact]
+        public void CheckCharacterDot() {
+            ICharacter c = new Character('.');
+            char[,] expectedBuffer = new char[,] {
+                {' ',' ',' ',' ',' '},
+                {' ',' ',' ',' ',' '},
+                {' ',' ','*',' ',' '},
+                {' ',' ',' ',' ',' '},
+                {' ',' ',' ',' ',' '}
+            };
+            this.assertCharEquals(expectedBuffer, c.buffer()); 
+        }
+
+        [Fact]
+        public void CheckCharacterUnknown() {
+            bool e = false;
+            try {
+                ICharacter c = new Character('p');
+            } catch(UnknownCharacter) {
+                e = true;
+            }
+            Assert.Equal(e, true);
+        }   
+
+        private void assertCharEquals(char[,] b1, char[,] b2) {
+            Assert.Equal(b1.GetLength(0), b2.GetLength(0));
+            Assert.Equal(b1.GetLength(1), b2.GetLength(1));
+            for(int i = 0; i < b1.GetLength(0); ++i)
+            for(int j = 0; j < b1.GetLength(1); ++j) {
+                Assert.Equal(b1[i,j], b2[i,j]);                   
+            }
+        }
+        [Fact]
+        public void CheckTextProcessing()
+        {
+            Text text = new Text();
+            text.processText("/////;b,b,b");
+        }
     }
 }
