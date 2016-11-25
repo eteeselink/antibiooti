@@ -17,10 +17,9 @@ namespace Antibiooti.Forum2016
             
             // }
 
-            for (int i = 0; i < args.Length; i++)
-            {
-                Console.WriteLine(args[i]);
-            }
+
+            CommandlineScanner scanner= new CommandlineScanner();
+            scanner.ProcessArgs(args);
         }
     }
 }
