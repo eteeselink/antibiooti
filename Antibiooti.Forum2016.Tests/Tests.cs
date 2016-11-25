@@ -19,19 +19,48 @@ namespace Antibiooti.Forum2016.Tests
         }
 
         [Fact]
-        public void CheckMovieNoFileGiven()
+        public void CheckMovieFileGiven()
         {
             Movie movie = new Movie("");
             Assert.Equal(movie.readFile(), "An unexpected error in opening file happened. Please try again.");
+            Movie movie2 = new Movie("movie.txt");
+            Assert.Equal(movie2.readFile(), "Success");
         
         }
 
         [Fact]
-        public void CheckMovieFileGiven()
+        public void CheckMovieCommandFormat()
         {
-            Movie movie = new Movie("movie.txt");
-            movie.readFile();
-        
+            Movie movie2 = new Movie("movieWrongCommand.txt");
+            Assert.Equal(movie2.readFile(), "The movie command is not in proper form");
+        }
+
+        [Fact]
+        public void CheckCharacterDot() {
+            ICharacter c = new Character('.');
+            char[,] expectedBuffer = new char[,] {
+                {' ',' ',' ',' ',' '},
+                {' ',' ',' ',' ',' '},
+                {' ',' ','*',' ',' '},
+                {' ',' ',' ',' ',' '},
+                {' ',' ',' ',' ',' '}
+            };
+            this.assertCharEquals(expectedBuffer, c.buffer()); 
+        }
+
+        private void assertCharEquals(char[,] b1, char[,] b2) {
+            Assert.Equal(b1.GetLength(0), b2.GetLength(0));
+            Assert.Equal(b1.GetLength(1), b2.GetLength(1));
+            for(int i = 0; i < b1.GetLength(0); ++i)
+            for(int j = 0; j < b1.GetLength(1); ++j) {
+                Assert.Equal(b1[i,j], b2[i,j]);                   
+            }
+        }
+        [Fact]
+        public void CheckTextProcessing()
+        {
+            Text text = new Text();
+            text.processText("/////;b,b,b");
         }
 
         [Fact]

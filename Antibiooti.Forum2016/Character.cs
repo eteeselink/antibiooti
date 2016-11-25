@@ -7,7 +7,7 @@ namespace Antibiooti.Forum2016
     {
         private char[,] _buffer;
 
-        Character(char c) {
+        public Character(char c) {
             this._buffer = new char[5,5];
             for(int i = 0; i < 5; ++i)
                 for(int j = 0; j < 5; ++j)
@@ -16,6 +16,20 @@ namespace Antibiooti.Forum2016
             if (c == '.') {
                 _buffer[2,2] = '*';
             } 
+            else if (c == '\\') {
+                _buffer[0,0] = '*';
+                _buffer[1,1] = '*';
+                _buffer[2,2] = '*';
+                _buffer[3,3] = '*';
+                _buffer[4,4] = '*';
+            } 
+            else if (c == '/') {
+                _buffer[0,4] = '*';
+                _buffer[1,3] = '*';
+                _buffer[2,2] = '*';
+                _buffer[3,1] = '*';
+                _buffer[4,0] = '*';
+            }
         }
 
         public char[,] buffer() { return this._buffer; }
