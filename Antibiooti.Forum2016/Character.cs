@@ -62,6 +62,15 @@ namespace Antibiooti.Forum2016
                 _buffer[3,3] = '*';
                 _buffer[3,1] = '*';
             }
+            else if (c == 'x') {
+                for(int x = 1, y = 1; x <= 3; x++, y++) {
+                    _buffer[x,y] = '*';
+                }
+
+                for(int x = 1, y = 3; x <= 3; x++, y--) {
+                    _buffer[x,y] = '*';
+                }
+            }
             else {
                 throw new UnknownCharacter();
             }
