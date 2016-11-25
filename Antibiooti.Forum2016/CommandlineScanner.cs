@@ -1,20 +1,30 @@
 using System;
 
+
 namespace Antibiooti.Forum2016
 {
     public class CommandlineScanner
     {
-        public CommandlineScanner{};
-
+    
         public void ProcessArgs(string[] args) {
-            if args.length > 0 & (args[0] == "text" || args[0] == "movie" || args[0]== "char") ;
+            if (args.length > 0) 
                for (int i = 0; i < length; i++)
             {
-               if args[0] == "text";
+               if (args[0] == "text")
                {
-                   
+                   textInput = args[1] + ";" + args[2];
+                   Text outputText = new Text();
+                   outputText.processText(textInput);
+                   //Go to text function
                }
-
+               else if (args[0] == "movie")
+               {
+                   //Go to Movie Function
+               }
+               else 
+               {
+                   //Go to Char Function
+               }
 
             }
             else
