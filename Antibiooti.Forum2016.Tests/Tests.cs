@@ -49,7 +49,7 @@ namespace Antibiooti.Forum2016.Tests
             Assert.Equal(ch2.buffer()[2,3], ' ');
         }
 
-/*
+
         [Fact]
         public void CheckCharacterDot() {
             ICharacter c = new Character('.');
@@ -62,7 +62,7 @@ namespace Antibiooti.Forum2016.Tests
             };
             this.assertCharEquals(expectedBuffer, c.buffer()); 
         }
-
+        /*
         [Fact]
         public void CheckCharacterBar() {
             ICharacter c = new Character('|');
@@ -75,7 +75,7 @@ namespace Antibiooti.Forum2016.Tests
             };
             this.assertCharEquals(expectedBuffer, c.buffer()); 
         }
-
+        
         [Fact]
         public void CheckCharacterDash() {
             ICharacter c = new Character('-');
@@ -88,7 +88,8 @@ namespace Antibiooti.Forum2016.Tests
             };
             this.assertCharEquals(expectedBuffer, c.buffer()); 
         }
-
+        */
+        
         [Fact]
         public void CheckCharacterSlash() {
             ICharacter c = new Character('/');
@@ -101,7 +102,7 @@ namespace Antibiooti.Forum2016.Tests
             };
             this.assertCharEquals(expectedBuffer, c.buffer()); 
         }
-
+        
         [Fact]
         public void CheckCharacterBackslash() {
             ICharacter c = new Character('\\');
@@ -114,7 +115,7 @@ namespace Antibiooti.Forum2016.Tests
             };
             this.assertCharEquals(expectedBuffer, c.buffer()); 
         }
-
+        
         [Fact]
         public void CheckCharacterUnknown() {
             bool e = false;
@@ -125,7 +126,7 @@ namespace Antibiooti.Forum2016.Tests
             }
             Assert.Equal(e, true);
         }   
-        */
+        
 
         private void assertCharEquals(char[,] b1, char[,] b2) {
             Assert.Equal(b1.GetLength(0), b2.GetLength(0));
