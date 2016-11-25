@@ -31,8 +31,8 @@ namespace Antibiooti.Forum2016
            scr.printCharacter(c, 0, ConsoleColor.White);
            scr.printCharacter(c, 1, ConsoleColor.White);
            scr.printCharacter(c, 2, ConsoleColor.White);
-           scr.printCharacter(c, 3, ConsoleColor.White);
-           scr.printCharacter(c, 4, ConsoleColor.White);
+           scr.printCharacter(new Character('/'), 3, ConsoleColor.Cyan);
+           scr.printCharacter(new Character('\\'), 4, ConsoleColor.Green);
 
             CommandlineScanner scanner= new CommandlineScanner();
             scanner.ProcessArgs(args);
