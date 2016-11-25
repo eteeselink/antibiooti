@@ -8,7 +8,6 @@ string[] color;
 char[] arrayText;
     public void processText(string s) {
         string[] source;
-        string text, color;
         source = s.Split(';');
         this.text = source[0];//text
         this.color = source[1].Split(',');//color
