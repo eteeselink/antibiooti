@@ -10,17 +10,15 @@ class Movie {
     }
     public string readFile()
     {
-          try {
-                FileStream fs = File.Open(this.path, FileMode.Open);
-                byte[] b = new byte[1024];
-                UTF8Encoding temp = new UTF8Encoding(true);
-
-                while (fs.Read(b,0,b.Length) > 0) 
+          try {              
+                string[] fs = File.ReadAllLines(this.path);
+                foreach (string line in fs)
                 {
-                    Console.WriteLine(temp.GetString(b));
+                    // Use a tab to indent each line of the file.
+                    Console.WriteLine("\t" + line);
                 }
             }
-        catch (Exception e) {
+        catch (Exception) {
                 return "An unexpected error in opening file happened. Please try again.";                
             }
         return "";
