@@ -33,5 +33,11 @@ namespace Antibiooti.Forum2016.Tests
             movie.readFile();
         
         }
+        [Fact]
+        public void CheckTextProcessing()
+        {
+            Text text = new Text();
+            text.processText("/////;b,b,b");
+        }
     }
 }
