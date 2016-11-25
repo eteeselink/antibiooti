@@ -7,32 +7,53 @@ namespace Antibiooti.Forum2016
     {
     
         public void ProcessArgs(string[] args) {
-            if (args.Length > 0) 
-            
-            {
-               if (args[0] == "text")
+
+            if (args.Length < 1) {
+                OutputErrorMessage();
+                return;
+            }
+
+            string func = args[0].ToLower();
+
+            if (func != "text" || func != "movie" || func != "char") {
+                OutputErrorMessage();
+                return;
+            }
+
+               if (func == "text")
                {
-                   string textInput;
-                   textInput = args[1] + ";" + args[2];
+                   if (args.Length <= 2) {
+                        OutputErrorMessage();
+                        return;
+                   }
+
+                    string text = args[1];
+                    string color = args[2];
+                   string textInput = text + ";" + color;
+
                    Text outputText = new Text();
                    outputText.processText(textInput);
                    //Go to text function
                }
-               else if (args[0] == "movie")
+               else if (func == "movie")
                {
+                   string filePath = args[1]; 
                   Movie outputMovie = new Movie(args[1]);
 
                }
-               else 
+               else if (func == "char")
                {
                    //Go to Char Function
                }
+               else {
+                   OutputErrorMessage();
+               }
 
-            }
-            else
-            {
-                System.Console.WriteLine("Please provide valid inputs");
         }
+
+        private void OutputErrorMessage()
+        {
+            System.Console.WriteLine("Please provide valid inputs");
         }
-}
+    }
 }
