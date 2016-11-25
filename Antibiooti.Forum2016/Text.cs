@@ -1,3 +1,7 @@
+using System;
+
+namespace Antibiooti.Forum2016
+{
 public class Text {
 string text, color;
 char[] arrayText, arrayColor;
@@ -7,17 +11,15 @@ char[] arrayText, arrayColor;
         source = s.Split(';');
         this.text = source[0];//text
         this.color = source[1];//color
-        this.arrayText = source[0].value.ToCharArray();
-        this.arrayColor = source[1].value.ToCharArray();
-        //loop through array text
-        //inside the loop 
-        //send the posi (loop i),char of array text, char of array color 
-        //ddne
-        for(int i = 0; i < this.arrayText.length; i ++) {
-            //
+        this.arrayText = source[0].ToCharArray();
+        this.arrayColor = source[1].ToCharArray();
+        Character[] arrayLight = new Character[this.arrayText.Length];
+        Screen screen = new Screen();
+        for(int i = 0; i < this.arrayText.Length; i ++) {
+          arrayLight[i] = new Character(this.arrayText[i]);
+          screen.printCharacter(arrayLight[i], i);
         }
     }
-
     public string getText() {
         return this.text;
     }
@@ -27,3 +29,4 @@ char[] arrayText, arrayColor;
     
 
 } 
+}

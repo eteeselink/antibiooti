@@ -14,13 +14,16 @@ class Movie {
                 string[] fs = File.ReadAllLines(this.path);
                 foreach (string line in fs)
                 {
-                    // Use a tab to indent each line of the file.
-                    Console.WriteLine("\t" + line);
+                    string[] commands = line.Split(';');
+                    if (commands.Length != 3){
+                        return "The movie command is not in proper form";
+                    }
+                    
                 }
             }
         catch (Exception) {
                 return "An unexpected error in opening file happened. Please try again.";                
             }
-        return "";
+        return "Success";
     }
 }
