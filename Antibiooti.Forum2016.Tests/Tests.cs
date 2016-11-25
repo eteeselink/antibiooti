@@ -47,8 +47,6 @@ namespace Antibiooti.Forum2016.Tests
             Assert.Equal(ch2.buffer()[3,3], '*');
             Assert.Equal(ch2.buffer()[1,3], '*');
             Assert.Equal(ch2.buffer()[2,3], ' ');
-
-            var ch2 = new Character('X');
         }
 
 /*
