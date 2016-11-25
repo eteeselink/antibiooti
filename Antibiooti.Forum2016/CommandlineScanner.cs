@@ -15,7 +15,7 @@ namespace Antibiooti.Forum2016
 
             string func = args[0].ToLower();
 
-            if (func != "text" || func != "movie" || func != "char") {
+            if (func != "text" && func != "movie" && func != "char") {
                 OutputErrorMessage();
                 return;
             }
@@ -32,6 +32,7 @@ namespace Antibiooti.Forum2016
                    string textInput = text + ";" + color;
 
                    Text outputText = new Text();
+                   Console.WriteLine(textInput);
                    outputText.processText(textInput);
                    //Go to text function
                }
