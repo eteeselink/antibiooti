@@ -23,8 +23,15 @@ namespace Antibiooti.Forum2016.Tests
         {
             Movie movie = new Movie("");
             Assert.Equal(movie.readFile(), "An unexpected error in opening file happened. Please try again.");
-           
+        
+        }
 
+        [Fact]
+        public void CheckMovieFileGiven()
+        {
+            Movie movie = new Movie("movie.txt");
+            movie.readFile();
+        
         }
     }
 }
