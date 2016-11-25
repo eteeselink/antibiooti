@@ -4,6 +4,15 @@ namespace Antibiooti.Forum2016
 {
     class Screen : IScreen, IDisposable
     {
+        public Screen(){
+
+            for(int i = 0; i < 29; ++i)
+                for(int j = 0; j < 5; ++j)
+                    this._buffer[i,j] = ' ';
+
+        }
+
+
         public void Write(int x, int y, string text, ConsoleColor color = ConsoleColor.White)
         {
             Console.CursorLeft = x;
@@ -19,11 +28,11 @@ namespace Antibiooti.Forum2016
             
         }
 // 
-        private int[,] _buffer = new int[5,5];
-        public void printCharacter(Character c, int gridId, ConsoleColor color) {
+        private int[,] _buffer = new int[29,5];
+        public void printCharacter(ICharacter c, int gridId, ConsoleColor color) {
         //public void printCharacter(int[][] d, ConsoleColor color) {
 
-            char[,] charBuffer = c.buffer;
+            char[,] charBuffer = c.buffer();
 
 
                 for (int i = 0; i < 5; i++) {
@@ -41,7 +50,7 @@ namespace Antibiooti.Forum2016
                         Console.Write("*");
 
                     }
-                    Console.Write("/n");
+                    Console.WriteLine();
                 }
             }
 

@@ -24,7 +24,15 @@ namespace Antibiooti.Forum2016
                 scr.Write(10, 13, "  * * *         * * *        * * *         * * *         * * *  ");
                 scr.Write(10, 14, "*   *   *     *   *   *    *   *   *     *   *   *     *   *   *");
                 Console.ReadKey(true);*/
-
+                
+           Screen scr=new Screen();
+           Character c = new Character('.');
+           
+           scr.printCharacter(c, 0, ConsoleColor.White);
+           scr.printCharacter(c, 1, ConsoleColor.White);
+           scr.printCharacter(c, 2, ConsoleColor.White);
+           scr.printCharacter(c, 3, ConsoleColor.White);
+           scr.printCharacter(c, 4, ConsoleColor.White);
 
             CommandlineScanner scanner= new CommandlineScanner();
             scanner.ProcessArgs(args);
