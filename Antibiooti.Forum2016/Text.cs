@@ -15,6 +15,7 @@ char[] arrayText;
         ConsoleColor[] consoleColors = new ConsoleColor[this.color.Length];
 
         for (int i = 0; i < this.color.Length; i++) {
+            consoleColors[i] = ConsoleColor.White;
             if (this.color[i] == "b") {
                 consoleColors[i] = ConsoleColor.Blue;
             }
