@@ -28,12 +28,14 @@ namespace Antibiooti.Forum2016
             
         }
 // 
-        private int[,] _buffer = new int[29,5];
+        private char[,] _buffer = new char[29,5];
+        private ConsoleColor[] _color = new ConsoleColor[5];
+
         public void printCharacter(ICharacter c, int gridId, ConsoleColor color) {
         //public void printCharacter(int[][] d, ConsoleColor color) {
 
             char[,] charBuffer = c.buffer();
-
+            _color[gridId] = color;
 
                 for (int i = 0; i < 5; i++) {
                     for (int j = 0; j < 5; j++) {
@@ -46,9 +48,13 @@ namespace Antibiooti.Forum2016
                 // print to screen
                 for (int i = 0; i < 5; i++) {
                     for (int j = 0; j < 29; j++) {
- //                       Console.ForegroundColor=color;
-                        Console.Write("*");
+                       Console.ForegroundColor=_color[j/6];
 
+                        Console.Write(_buffer[j, i]);
+                    // Console.CursorLeft=_buffer[j, i];
+
+                    // Console.CursorTop=_buffer[i, i];
+                    // Console.Write("*/");
                     }
                     Console.WriteLine();
                 }
