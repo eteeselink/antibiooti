@@ -1,6 +1,5 @@
 using System;
 using System.IO;
-using System.Text;
 using System.Threading;
 
 namespace Antibiooti.Forum2016 {
@@ -28,9 +27,10 @@ namespace Antibiooti.Forum2016 {
                             return "Last symbol is not an integer";
                         }
                         Console.Clear();
-                        text.processText( commands[0] + commands[1] );
-                        Thread.Sleep(n);                        
-                    }
+                        text.processText( commands[0] + ';' + commands[1] );
+
+                        Thread.Sleep(n*1000);                        
+                    }                   
                 }
             catch (Exception) {
                     return "An unexpected error in opening file happened. Please try again.";                
