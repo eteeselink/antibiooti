@@ -18,6 +18,13 @@ namespace Antibiooti.Forum2016
             if (c == '.') {
                 _buffer[2,2] = '*';
             } 
+            else if (c == '|') {
+                _buffer[2,0] = '*';
+                _buffer[2,1] = '*';
+                _buffer[2,2] = '*';
+                _buffer[2,3] = '*';
+                _buffer[2,4] = '*';
+            }
             else if (c == '\\') {
                 _buffer[0,0] = '*';
                 _buffer[1,1] = '*';
@@ -31,7 +38,31 @@ namespace Antibiooti.Forum2016
                 _buffer[2,2] = '*';
                 _buffer[3,1] = '*';
                 _buffer[4,0] = '*';
-            } else {
+            }
+            else if (c == '-') {
+                _buffer[0,2] = '*';
+                _buffer[1,2] = '*';
+                _buffer[2,2] = '*';
+                _buffer[3,2] = '*';
+                _buffer[4,2] = '*';
+            }
+            else if (c == 'o') {
+                _buffer[2,2] = '*';
+                _buffer[1,3] = '*';
+                _buffer[3,3] = '*';
+                _buffer[2,4] = '*';
+            }
+            else if (c == 'O') {
+                _buffer[2,0] = '*';
+                _buffer[0,2] = '*';
+                _buffer[2,4] = '*';
+                _buffer[4,2] = '*';
+                _buffer[1,1] = '*';
+                _buffer[1,3] = '*';
+                _buffer[3,3] = '*';
+                _buffer[3,1] = '*';
+            }
+            else {
                 throw new UnknownCharacter();
             }
         }
