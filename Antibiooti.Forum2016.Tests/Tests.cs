@@ -31,8 +31,10 @@ namespace Antibiooti.Forum2016.Tests
         [Fact]
         public void CheckMovieCommandFormat()
         {
-            Movie movie2 = new Movie("movieWrongCommand.txt");
-            Assert.Equal(movie2.readFile(), "The movie command is not in proper form");
+            Movie movie = new Movie("movieWrongCommand.txt");
+            Assert.Equal(movie.readFile(), "The movie command is not in proper form");
+            Movie movie2 = new Movie("movieRightCommand.txt");
+            Assert.Equal(movie2.readFile(), "Last symbol is not an integer");
         }
 
         [Fact]
@@ -72,6 +74,28 @@ namespace Antibiooti.Forum2016.Tests
         {
             Text text = new Text();
             text.processText("/////;b,b,b");
+        }
+
+        [Fact]
+        public void TestCommandlineScanner()
+        {
+            string[] args = new string[] {"te", "111"};
+            CommandlineScanner scanner = new CommandlineScanner();
+            scanner.ProcessArgs(args);
+
+            
+            string[] args1 = new string[] {"text"};
+            scanner = new CommandlineScanner();
+            scanner.ProcessArgs(args1);
+
+            
+            string[] args2 = new string[] {"text", "oo.OO"};
+            scanner = new CommandlineScanner();
+            scanner.ProcessArgs(args2);
+
+            string[] args3 = new string[] {"text", "oo.OO", "r,g,b,b,r"};
+            scanner = new CommandlineScanner();
+            scanner.ProcessArgs(args3);
         }
     }
 }

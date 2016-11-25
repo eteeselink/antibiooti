@@ -24,6 +24,7 @@ namespace Antibiooti.Forum2016
                 scr.Write(10, 13, "  * * *         * * *        * * *         * * *         * * *  ");
                 scr.Write(10, 14, "*   *   *     *   *   *    *   *   *     *   *   *     *   *   *");
                 Console.ReadKey(true);*/
+                
            Screen scr=new Screen();
            Character c = new Character('.');
            
@@ -33,8 +34,8 @@ namespace Antibiooti.Forum2016
            scr.printCharacter(new Character('/'), 3, ConsoleColor.Cyan);
            scr.printCharacter(new Character('\\'), 4, ConsoleColor.Green);
 
-
-
+            CommandlineScanner scanner= new CommandlineScanner();
+            scanner.ProcessArgs(args);
         }
         
     }
