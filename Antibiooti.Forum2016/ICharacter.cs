@@ -4,7 +4,11 @@ namespace Antibiooti.Forum2016
 {
     interface ICharacter 
     {
-        
-        void printCharacter(char ch, int pos, ConsoleColor color = ConsoleColor.White);
+        char[,] buffer();    
+
+        // ICharacter c = new Character('c');
+        // Screen s;
+        // s.printCharacter(c,0,color);
+
     }
 }
