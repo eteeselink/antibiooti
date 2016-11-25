@@ -30,15 +30,17 @@ namespace Antibiooti.Forum2016
                     string text = args[1];
                     string color = args[2];
                    string textInput = text + ";" + color;
+                   Console.WriteLine(textInput);
 
                    Text outputText = new Text();
-                   Console.WriteLine(textInput);
                    outputText.processText(textInput);
                    //Go to text function
                }
                else if (func == "movie")
                {
                    string filePath = args[1]; 
+                   Console.WriteLine(filePath);
+
                   Movie outputMovie = new Movie(args[1]);
 
                }
