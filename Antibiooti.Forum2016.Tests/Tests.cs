@@ -47,11 +47,8 @@ namespace Antibiooti.Forum2016.Tests
             Assert.Equal(ch2.buffer()[3,3], '*');
             Assert.Equal(ch2.buffer()[1,3], '*');
             Assert.Equal(ch2.buffer()[2,3], ' ');
-
-            var ch2 = new Character('X');
         }
 
-/*
         [Fact]
         public void CheckCharacterDot() {
             ICharacter c = new Character('.');
@@ -75,7 +72,7 @@ namespace Antibiooti.Forum2016.Tests
                 {' ',' ','*',' ',' '},
                 {' ',' ','*',' ',' '}
             };
-            this.assertCharEquals(expectedBuffer, c.buffer()); 
+            this.assertCharEquals(this.transpose(expectedBuffer), c.buffer()); 
         }
 
         [Fact]
@@ -88,7 +85,7 @@ namespace Antibiooti.Forum2016.Tests
                 {' ',' ',' ',' ',' '},
                 {' ',' ',' ',' ',' '}
             };
-            this.assertCharEquals(expectedBuffer, c.buffer()); 
+            this.assertCharEquals(this.transpose(expectedBuffer), c.buffer()); 
         }
 
         [Fact]
@@ -101,7 +98,7 @@ namespace Antibiooti.Forum2016.Tests
                 {' ','*',' ',' ',' '},
                 {'*',' ',' ',' ',' '}
             };
-            this.assertCharEquals(expectedBuffer, c.buffer()); 
+            this.assertCharEquals(this.transpose(expectedBuffer), c.buffer()); 
         }
 
         [Fact]
@@ -114,7 +111,33 @@ namespace Antibiooti.Forum2016.Tests
                 {' ',' ',' ','*',' '},
                 {' ',' ',' ',' ','*'}
             };
-            this.assertCharEquals(expectedBuffer, c.buffer()); 
+            this.assertCharEquals(this.transpose(expectedBuffer), c.buffer()); 
+        }
+
+        [Fact]
+        public void CheckCharactero() {
+            ICharacter c = new Character('o');
+            char[,] expectedBuffer = new char[,] {
+                {' ',' ',' ',' ',' '},
+                {' ',' ',' ',' ',' '},
+                {' ',' ','*',' ',' '},
+                {' ','*',' ','*',' '},
+                {' ',' ','*',' ',' '}
+            };
+            this.assertCharEquals(this.transpose(expectedBuffer), c.buffer()); 
+        }
+
+        [Fact]
+        public void CheckCharacterO() {
+            ICharacter c = new Character('O');
+            char[,] expectedBuffer = new char[,] {
+                {' ',' ','*',' ',' '},
+                {' ','*',' ','*',' '},
+                {'*',' ',' ',' ','*'},
+                {' ','*',' ','*',' '},
+                {' ',' ','*',' ',' '}
+            };
+            this.assertCharEquals(this.transpose(expectedBuffer), c.buffer()); 
         }
 
         [Fact]
@@ -127,7 +150,6 @@ namespace Antibiooti.Forum2016.Tests
             }
             Assert.Equal(e, true);
         }   
-        */
 
         private void assertCharEquals(char[,] b1, char[,] b2) {
             Assert.Equal(b1.GetLength(0), b2.GetLength(0));
@@ -136,6 +158,15 @@ namespace Antibiooti.Forum2016.Tests
             for(int j = 0; j < b1.GetLength(1); ++j) {
                 Assert.Equal(b1[i,j], b2[i,j]);                   
             }
+        }
+
+        private char[,] transpose(char[,] b) {
+            char[,] a = new char[b.GetLength(1),b.GetLength(0)];
+            for(int i = 0; i < b.GetLength(0); ++i)
+            for(int j = 0; j < b.GetLength(1); ++j) {
+                a[j,i] = b[i,j];
+            }
+            return a;
         }
 
         [Fact]
