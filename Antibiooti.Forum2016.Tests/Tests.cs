@@ -17,5 +17,14 @@ namespace Antibiooti.Forum2016.Tests
             Assert.Equal(fakeScreen[14, 10].Char, ' ');            
             Assert.Equal(fakeScreen[14, 10].Color, ConsoleColor.White);            
         }
+
+        [Fact]
+        public void CheckMovieNoFileGiven()
+        {
+            Movie movie = new Movie("");
+            Assert.Equal(movie.readFile(), "An unexpected error in opening file happened. Please try again.");
+           
+
+        }
     }
 }
