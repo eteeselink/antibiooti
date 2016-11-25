@@ -48,6 +48,17 @@ namespace Antibiooti.Forum2016.Tests
             this.assertCharEquals(expectedBuffer, c.buffer()); 
         }
 
+        [Fact]
+        public void CheckCharacterUnknown() {
+            bool e = false;
+            try {
+                ICharacter c = new Character('p');
+            } catch(UnknownCharacter) {
+                e = true;
+            }
+            Assert.Equal(e, true);
+        }   
+
         private void assertCharEquals(char[,] b1, char[,] b2) {
             Assert.Equal(b1.GetLength(0), b2.GetLength(0));
             Assert.Equal(b1.GetLength(1), b2.GetLength(1));

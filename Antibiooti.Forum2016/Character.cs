@@ -3,6 +3,8 @@ using System;
 namespace Antibiooti.Forum2016
 {
 
+    class UnknownCharacter : Exception {}
+
     class Character : ICharacter
     {
         private char[,] _buffer;
@@ -29,6 +31,8 @@ namespace Antibiooti.Forum2016
                 _buffer[2,2] = '*';
                 _buffer[3,1] = '*';
                 _buffer[4,0] = '*';
+            } else {
+                throw new UnknownCharacter();
             }
         }
 
