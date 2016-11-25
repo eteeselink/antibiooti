@@ -16,8 +16,8 @@ char[] arrayText, arrayColor;
         Character[] arrayLight = new Character[this.arrayText.Length];
         Screen screen = new Screen();
         for(int i = 0; i < this.arrayText.Length; i ++) {
-          arrayLight[i] = new Character(this.arrayText[i]);
-          screen.printCharacter(arrayLight[i], i);
+            arrayLight[i] = new Character(this.arrayText[i]);
+            screen.printCharacter(arrayLight[i], i, ConsoleColor.White);
         }
     }
     public string getText() {
