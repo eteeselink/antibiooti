@@ -19,19 +19,20 @@ namespace Antibiooti.Forum2016.Tests
         }
 
         [Fact]
-        public void CheckMovieNoFileGiven()
+        public void CheckMovieFileGiven()
         {
             Movie movie = new Movie("");
             Assert.Equal(movie.readFile(), "An unexpected error in opening file happened. Please try again.");
+            Movie movie2 = new Movie("movie.txt");
+            Assert.Equal(movie2.readFile(), "Success");
         
         }
 
         [Fact]
-        public void CheckMovieFileGiven()
+        public void CheckMovieCommandFormat()
         {
-            Movie movie = new Movie("movie.txt");
-            movie.readFile();
-        
+            Movie movie2 = new Movie("movieWrongCommand.txt");
+            Assert.Equal(movie2.readFile(), "The movie command is not in proper form");
         }
 
         [Fact]
