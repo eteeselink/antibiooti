@@ -1,1 +1,4 @@
-.....;r,r,r,r,r;2
+.....;r,r,r,r,r;4
+oO.\/;b,b,r,b,r;3
+\\..O;r,r,b,b,b;3
+OOooO;b,r,b,r,b;15
