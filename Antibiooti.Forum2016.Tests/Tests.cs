@@ -67,5 +67,11 @@ namespace Antibiooti.Forum2016.Tests
                 Assert.Equal(b1[i,j], b2[i,j]);                   
             }
         }
+        [Fact]
+        public void CheckTextProcessing()
+        {
+            Text text = new Text();
+            text.processText("/////;b,b,b");
+        }
     }
 }
