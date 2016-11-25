@@ -18,7 +18,11 @@ class Movie {
                     if (commands.Length != 3){
                         return "The movie command is not in proper form";
                     }
-                    
+                    int n;
+                    bool isInteger = int.TryParse(commands[2], out n);
+                    if(!isInteger)
+                        return "Last symbol is not an integer";
+
                 }
             }
         catch (Exception) {

@@ -31,8 +31,10 @@ namespace Antibiooti.Forum2016.Tests
         [Fact]
         public void CheckMovieCommandFormat()
         {
-            Movie movie2 = new Movie("movieWrongCommand.txt");
-            Assert.Equal(movie2.readFile(), "The movie command is not in proper form");
+            Movie movie = new Movie("movieWrongCommand.txt");
+            Assert.Equal(movie.readFile(), "The movie command is not in proper form");
+            Movie movie2 = new Movie("movieRightCommand.txt");
+            Assert.Equal(movie2.readFile(), "Last symbol is not an integer");
         }
     }
 }
