@@ -16,6 +16,48 @@ namespace Antibiooti.Forum2016
             Console.CursorVisible = false;
             Console.CursorLeft = 0;
             Console.CursorTop = 0;
+            
+        }
+// 
+        private int[,] _buffer = new int[5,5];
+        public void printCharacter(Character c, int gridId, ConsoleColor color) {
+        //public void printCharacter(int[][] d, ConsoleColor color) {
+
+            char[,] charBuffer = c.buffer;
+
+
+                for (int i = 0; i < 5; i++) {
+                    for (int j = 0; j < 5; j++) {
+                        _buffer[i + gridId * 6, j] = charBuffer[i, j];
+                    }
+                }
+            
+
+            if (gridId == 4) {
+                // print to screen
+                for (int i = 0; i < 5; i++) {
+                    for (int j = 0; j < 29; j++) {
+ //                       Console.ForegroundColor=color;
+                        Console.Write("*");
+
+                    }
+                    Console.Write("/n");
+                }
+            }
+
+        // for (int i=0; i<d.Length; i++){
+        //       for(int j=0;j<d[i].Length;j++)
+        //       {
+        //         Console.CursorLeft=d[i][j];
+        //         Console.CursorTop=d[j][i];
+        //         Console.ForegroundColor=color;
+        //         Console.Write("*");
+        //       }
+        //     }
+
+
+
+
         }
 
         public void Clear()
