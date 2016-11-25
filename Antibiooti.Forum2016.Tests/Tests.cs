@@ -37,6 +37,20 @@ namespace Antibiooti.Forum2016.Tests
             Assert.Equal(movie2.readFile(), "Last symbol is not an integer");
         }
 
+        [Fact]
+        public void MoreCharacterWork() {
+            var ch = new Character('o');
+            Assert.Equal(ch.buffer()[1,3], '*');
+
+            var ch2 = new Character('x');
+            Assert.Equal(ch2.buffer()[1,1], '*');
+            Assert.Equal(ch2.buffer()[3,3], '*');
+            Assert.Equal(ch2.buffer()[1,3], '*');
+            Assert.Equal(ch2.buffer()[2,3], ' ');
+
+            var ch2 = new Character('X');
+        }
+
 /*
         [Fact]
         public void CheckCharacterDot() {
