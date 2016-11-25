@@ -128,7 +128,7 @@ namespace Antibiooti.Forum2016.Tests
         public void CheckTextProcessing()
         {
             Text text = new Text();
-            text.processText("/////;b,b,b");
+            text.processText("/////;b,b,b,b,b");
         }
 
         [Fact]
