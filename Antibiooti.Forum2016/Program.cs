@@ -31,12 +31,11 @@ namespace Antibiooti.Forum2016
         //    scr.printCharacter(c, 0, ConsoleColor.White);
         //    scr.printCharacter(c, 1, ConsoleColor.White);
         //    scr.printCharacter(c, 2, ConsoleColor.White);
-           scr.printCharacter(new Character('/'), 0, ConsoleColor.Cyan);
-           scr.printCharacter(new Character('\\'), 1, ConsoleColor.Green);
-           scr.printCharacter(new Character('-'), 2, ConsoleColor.Green);
-           scr.printCharacter(new Character('o'), 3, ConsoleColor.Green);
-           scr.printCharacter(new Character('O'), 4, ConsoleColor.Green);
+        //    scr.printCharacter(new Character('/'), 3, ConsoleColor.Cyan);
+        //    scr.printCharacter(new Character('\\'), 4, ConsoleColor.Green);
 
+            CommandlineScanner scanner= new CommandlineScanner();
+            scanner.ProcessArgs(args);
         }
         
     }
