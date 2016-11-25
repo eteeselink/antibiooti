@@ -33,5 +33,27 @@ namespace Antibiooti.Forum2016.Tests
             movie.readFile();
         
         }
+
+        [Fact]
+        public void CheckCharacterDot() {
+            ICharacter c = new Character('.');
+            char[,] expectedBuffer = new char[,] {
+                {' ',' ',' ',' ',' '},
+                {' ',' ',' ',' ',' '},
+                {' ',' ','*',' ',' '},
+                {' ',' ',' ',' ',' '},
+                {' ',' ',' ',' ',' '}
+            };
+            Assert.True(this.charEquals(expectedBuffer, c.buffer())); 
+        }
+
+        private bool charEquals(char[,] b1, char[,] b2) {
+            Assert.Equal(b1.GetLength(0), b2.GetLength(0));
+            Assert.Equal(b1.GetLength(1), b2.GetLength(1));
+            for(int i = 0; i < b1.GetLength(0); ++i)
+            for(int j = 0; j < b1.GetLength(1); ++j) {
+                Assert.Equal(b1[i,j], b2[i,j]);                   
+            }
+        }
     }
 }
