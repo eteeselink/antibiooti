@@ -41,7 +41,8 @@ namespace Antibiooti.Forum2016
                    string filePath = args[1]; 
                    Console.WriteLine(filePath);
 
-                  Movie outputMovie = new Movie(args[1]);
+                  Movie outputMovie = new Movie(filePath);
+                  outputMovie.readFile();
 
                }
                else if (func == "char")
@@ -60,7 +61,7 @@ namespace Antibiooti.Forum2016
                 Screen scr=new Screen();
                 Character c = new Character(chr[0]);
            
-           // TODO Convert the color to ConsoleColor
+           // TODO Convert the color to ConsoleColor.
            scr.printCharacter(c, pos2, ConsoleColor.White);
                    
                }
