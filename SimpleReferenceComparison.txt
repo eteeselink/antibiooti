@@ -1,0 +1,8 @@
+Read text file:
+System.IO.StreamReader
+https://msdn.microsoft.com/en-us/library/db5x7c0d(v=vs.110).aspx
+
+
+
+Java: HashMap
+C#: Dictionary
