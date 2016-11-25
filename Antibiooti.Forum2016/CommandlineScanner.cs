@@ -7,11 +7,12 @@ namespace Antibiooti.Forum2016
     {
     
         public void ProcessArgs(string[] args) {
-            if (args.length > 0) 
-               for (int i = 0; i < length; i++)
+            if (args.Length > 0) 
+            
             {
                if (args[0] == "text")
                {
+                   string textInput;
                    textInput = args[1] + ";" + args[2];
                    Text outputText = new Text();
                    outputText.processText(textInput);
@@ -19,7 +20,8 @@ namespace Antibiooti.Forum2016
                }
                else if (args[0] == "movie")
                {
-                   //Go to Movie Function
+                  Movie outputMovie = new Movie(args[1]);
+
                }
                else 
                {
@@ -31,6 +33,6 @@ namespace Antibiooti.Forum2016
             {
                 System.Console.WriteLine("Please provide valid inputs");
         }
-    }
+        }
 }
 }
